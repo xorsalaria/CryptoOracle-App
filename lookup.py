@@ -16,5 +16,5 @@ for x in api:
 		if coin == x["symbol"]:
 			print(x["name"])
 			print("${0:.2f}".format(float(x["price_usd"]))
-			print"Rank: {0:.0f}".format(float(x["rank"])))
+			print("Rank: {0:.0f}".format(float(x["rank"])))
 			print("------------------")
