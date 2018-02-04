@@ -20,7 +20,7 @@ my_portfoloio = [
 	{
 		"sym": "XRP",
 		"amount_owned": 6000,
-		"price_paid_per": .20
+		"price_paid_per": 3.20
 	},
 	{
 		"sym": "XLM",
@@ -41,25 +41,24 @@ print("-----------------------------")
 for x in api:
 	for coin in my_portfoloio:
 		if coin["sym"] == x["symbol"]:
+            
 
 			#Let's do some Maths
 			total_paid = float(coin["amount_owned"]) * float(coin["price_paid_per"])
 			current_value = float(coin["amount_owned"]) * float(x["price_usd"])
 			profit_loss = current_value - total_paid
 			portfolio_profit_loss += profit_loss 
+			profit_loss_per_coin = float(x["price_usd"]) - float(coin["price_paid_per"])
 
 
 
 			print(x["name"])
-			print("USD: ${0:.2f}".format(float(x["price_usd"])))
+			print(" Current Price: ${0:.2f}".format(float(x["price_usd"])))
+			print(" Profit/Loss Per Coin: ${0:.2f}".format(float(profit_loss_per_coin)))
 			print(x["rank"])
-			print("Total Paid: ${0:.2f}".format(total_paid))
-			print("Current Values: ${0:.2f}".format(current_value))
-			print("Profit/Loss: ${0:.2f}".format(profit_loss))
+			print(" Total Paid: ${0:.2f}".format(total_paid))
+			print(" Current Values: ${0:.2f}".format(current_value))
+			print(" Profit/Loss: ${0:.2f}".format(profit_loss))
 			print("-----------------------------")
 
 print("Portfolio Profit/Loss:",portfolio_profit_loss)
-
-
-
-
