@@ -51,11 +51,13 @@ for x in api:
 			profit_loss_per_coin = float(x["price_usd"]) - float(coin["price_paid_per"])
 
 
+# print("Rank: $".format(x["rank"]))
+#print(x["rank"])
 
 			print(x["name"])
 			print(" Current Price: ${0:.2f}".format(float(x["price_usd"])))
 			print(" Profit/Loss Per Coin: ${0:.2f}".format(float(profit_loss_per_coin)))
-			print(x["rank"])
+			print(" Rank:{0}".format(x["rank"]))
 			print(" Total Paid: ${0:.2f}".format(total_paid))
 			print(" Current Values: ${0:.2f}".format(current_value))
 			print(" Profit/Loss: ${0:.2f}".format(profit_loss))
